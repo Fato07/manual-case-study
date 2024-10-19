@@ -1,0 +1,81 @@
+.landingHero {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  height: 750px;
+  background-size: cover;
+  background-position: center;
+  flex-direction: row;
+  text-align: left;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 100vh;
+    padding: unset;
+    width: 100%;
+  }
+}
+
+
+.landingHero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 371px;
+  max-width: 468px;
+  margin-left: 10%;
+  gap: 20px;
+  color: #0B3B3C;
+
+  @media (max-width: 768px) {
+    padding: auto;
+    margin-bottom: 0px;
+    width: 100%;
+    height: unset;
+  }
+}
+
+.landingHero__heading {
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 90px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  line-height: 90px;
+
+}
+
+.landingHero__description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+}
+
+.landingHero__button {
+  align-self: flex-start;
+  width: 156px;
+  height: 45pxpx;
+  padding: 15px 30px 15px 30px;
+  gap: 10px;
+  opacity: 0px;
+  background-color: #8a2c2c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #6f2222;
+  }
+}
+
+.landingHero__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}

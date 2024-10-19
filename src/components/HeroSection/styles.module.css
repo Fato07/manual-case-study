@@ -1,0 +1,105 @@
+.heroSection {
+    width: 100%;
+    height: 735px;
+    gap: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.heroSection__contentWrapper {
+    align-items: center;
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%; /* Add 10% margin on both sides */
+}
+
+.heroSection__imageLeft .heroSection__contentWrapper {
+    flex-direction: row-reverse;
+}
+
+.heroSection__imageRight .heroSection__contentWrapper {
+    flex-direction: row;
+}
+
+.heroSection__textContent {
+    max-width: 372px;
+    color: #0B3B3C;
+    text-align: left;
+}
+
+.heroSection__subheading {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #7D8D92;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px; /* Space between subheading and title */
+  }
+  
+.heroSection__title {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    text-align: left;
+}
+
+.heroSection__description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+}
+
+.heroSection__imageWrapper {
+    
+}
+
+.heroSection__imageLeft .heroSection__imageWrapper {
+    justify-content: flex-start;
+}
+
+.heroSection__imageRight .heroSection__imageWrapper {
+    justify-content: flex-end;
+}
+
+.heroSection__image {
+    width: 370px; /* Ensure the image stays at this width */
+    height: 445px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.heroSection__imageLeft .heroSection__imageWrapper img {
+    margin-left: -40px;
+  }
+
+  .heroSection__imageRight .heroSection__imageWrapper img {
+    margin-right: -40px;
+  }
+
+@media (max-width: 768px) {
+    .heroSection__contentWrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%; /* Adjust padding for smaller screens */
+    }
+
+    .heroSection__textContent {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .heroSection__imageWrapper {
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+}
