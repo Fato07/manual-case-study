@@ -45,7 +45,7 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
               onClick={() => handleAnswer(option.value)}
               className={answers[currentStep] === option.value ? styles['quiz__option--selected'] : ''}
             >
-              {option.display}
+              <span dangerouslySetInnerHTML={{ __html: option.display }} />
             </Button>
           ))}
         </div>
