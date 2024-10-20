@@ -5,7 +5,8 @@ import Button from '../Button';
 import styles from './styles.module.css';
 
 interface QuizProps {
-  questions: Array<{ question: string; options: Array<{ display: string; value: any; isRejection?: boolean }> }>;
+  questions: Array<{ question: string; 
+  options: Array<{ display: string; value: any; isRejection?: boolean }> }>;
 }
 
 const Quiz: FC<QuizProps> = ({ questions }) => {
