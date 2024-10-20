@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 interface QuizState {
   currentStep: number;
-  questions: Array<{ question: string; options: Array<{ display: string; value: any }> }>;
+  questions: Array<{ question: string; options: Array<{ display: string; value: any; isRejection?: boolean }> }>;
   answers: any[];
   rejectionOccurred: boolean;
   setAnswer: (step: number, answer: any, isRejection: boolean) => void;
