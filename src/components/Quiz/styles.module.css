@@ -1,4 +1,4 @@
-.quiz-overlay {
+.quiz__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   z-index: 1000;
 }
 
-.quiz-question {
+.quiz__question {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -20,15 +20,15 @@
   text-align: center;
 }
 
-.quiz-options {
+.quiz__options {
   margin-top: 20px;
 }
 
-.quiz-option--selected {
+.quiz__option--selected {
   background-color: #0070f3;
   color: white;
 }
 
-.quiz-navigation {
+.quiz__navigation {
   margin-top: 20px;
 }

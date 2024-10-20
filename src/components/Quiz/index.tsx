@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, FC } from 'react';
 import { z } from 'zod';
 import { useQuizStore } from '../../state/quizStore';
 import styles from './styles.module.css';
 
-const Quiz = () => {
+const Quiz: FC = () => {
   const { currentStep, questions, answers, setAnswer, nextStep, prevStep, rejectionOccurred } = useQuizStore();
 
   const answerSchema = z.array(z.object({
@@ -29,21 +29,21 @@ const Quiz = () => {
   };
 
   return (
-    <div className={styles['quiz-overlay']}>
-      <div className={styles['quiz-question']}>
+    <div className={styles['quiz__overlay']}>
+      <div className={styles['quiz__question']}>
         <h2>{questions[currentStep].question}</h2>
-        <div className={styles['quiz-options']}>
+        <div className={styles['quiz__options']}>
           {questions[currentStep].options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(option.value)}
-              className={answers[currentStep] === option.value ? styles['quiz-option--selected'] : ''}
+              className={answers[currentStep] === option.value ? styles['quiz__option--selected'] : ''}
             >
               {option.display}
             </button>
           ))}
         </div>
-        <div className={styles['quiz-navigation']}>
+        <div className={styles['quiz__navigation']}>
           {currentStep > 0 && <button onClick={prevStep}>Back</button>}
           {currentStep < questions.length - 1 && <button onClick={nextStep}>Next</button>}
           {currentStep === questions.length - 1 && (
