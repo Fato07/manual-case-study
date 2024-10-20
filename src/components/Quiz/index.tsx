@@ -54,7 +54,11 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
         </div>
         <div className={styles['quiz__navigation']}>
           {currentStep > 0 && <Button onClick={prevStep}>Back</Button>}
-          {currentStep < questions.length - 1 && <Button onClick={nextStep}>Next</Button>}
+          {currentStep < questions.length - 1 && (
+            <Button onClick={nextStep} disabled={answers[currentStep] === undefined}>
+              Next
+            </Button>
+          )}
           {currentStep === questions.length - 1 && (
             <div>
               <div className={styles.modal}>
@@ -67,7 +71,9 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
                     Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
                   </p>
                 )}
-                <Button onClick={() => window.location.reload()}>Close</Button>
+                <Button onClick={() => window.location.reload()} disabled={answers[currentStep] === undefined}>
+                  Close
+                </Button>
               </div>
               <div className={styles['modal-backdrop']} />
             </div>
