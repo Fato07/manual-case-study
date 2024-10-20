@@ -54,15 +54,19 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
           {currentStep < questions.length - 1 && <Button onClick={nextStep}>Next</Button>}
           {currentStep === questions.length - 1 && (
             <div>
-              {rejectionOccurred ? (
-                <p>
-                  Unfortunately, we are unable to prescribe this medication for you. This is because finasteride can alter the PSA levels, which may be used to monitor for cancer. You should discuss this further with your GP or specialist if you would still like this medication.
-                </p>
-              ) : (
-                <p>
-                  Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
-                </p>
-              )}
+              <div className={styles.modal}>
+                {rejectionOccurred ? (
+                  <p>
+                    Unfortunately, we are unable to prescribe this medication for you. This is because finasteride can alter the PSA levels, which may be used to monitor for cancer. You should discuss this further with your GP or specialist if you would still like this medication.
+                  </p>
+                ) : (
+                  <p>
+                    Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
+                  </p>
+                )}
+                <Button onClick={() => window.location.reload()}>Close</Button>
+              </div>
+              <div className={styles['modal-backdrop']} />
             </div>
           )}
         </div>
