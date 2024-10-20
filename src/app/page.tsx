@@ -18,7 +18,7 @@ export default function Home() {
     // Fetch questions from an external source or API
     fetch('/questions.json')
       .then(response => response.json())
-      .then(data => setQuestions(data))
+      .then(data => setQuestions(data.questions))
       .catch(error => console.error('Error loading questions:', error));
   }, []);
 
