@@ -43,5 +43,5 @@ export default function Home() {
       />
       {quizVisible && <Quiz questions={questions} />}
     </div>
-  );
+  ) : null;
 }

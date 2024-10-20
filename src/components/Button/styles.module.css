@@ -1,11 +1,10 @@
 .button {
-  width: auto;
-  height: auto;
+  width: 156px;
+  height: 45px;
   padding: 10px 20px;
-  background-color: #8a2c2c;
+  background: #7E0707;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
