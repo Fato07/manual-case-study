@@ -16,7 +16,7 @@ export default function Home() {
     <div>
       <button onClick={() => setQuizVisible(true)}>Take the Quiz</button>
       {quizVisible && <Quiz />}
-      <LandingHero/>
+      <LandingHero setQuizVisible={setQuizVisible} />
       <HeroSection
         imageSrc={HeroImage01.src}
         title="Hair loss needn't be irreversible. We can help!"
