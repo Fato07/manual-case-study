@@ -1,6 +1,7 @@
 import React, { useEffect, FC } from 'react';
 import { z } from 'zod';
 import { useQuizStore } from '../../state/quizStore';
+import Button from '../Button';
 import styles from './styles.module.css';
 
 const Quiz: FC = () => {
@@ -34,18 +35,18 @@ const Quiz: FC = () => {
         <h2>{questions[currentStep].question}</h2>
         <div className={styles['quiz__options']}>
           {questions[currentStep].options.map((option, index) => (
-            <button
+            <Button
               key={index}
               onClick={() => handleAnswer(option.value)}
               className={answers[currentStep] === option.value ? styles['quiz__option--selected'] : ''}
             >
               {option.display}
-            </button>
+            </Button>
           ))}
         </div>
         <div className={styles['quiz__navigation']}>
-          {currentStep > 0 && <button onClick={prevStep}>Back</button>}
-          {currentStep < questions.length - 1 && <button onClick={nextStep}>Next</button>}
+          {currentStep > 0 && <Button onClick={prevStep}>Back</Button>}
+          {currentStep < questions.length - 1 && <Button onClick={nextStep}>Next</Button>}
           {currentStep === questions.length - 1 && (
             <div>
               {rejectionOccurred ? (
