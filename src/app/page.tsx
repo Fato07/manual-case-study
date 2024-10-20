@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import LandingHero from "@/components/LandingHero";
+import Quiz from "@/components/Quiz";
 import styles from "./page.module.css";
 import HeroImage01 from '../assets/image_1.png'
 import HeroImage02 from '../assets/image_2.png'
@@ -7,6 +9,8 @@ import BackgroundSVG02 from '../assets/02.svg'
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
+  const [quizVisible, setQuizVisible] = useState(false);
+
   return (
     <div>
       <button onClick={() => setQuizVisible(true)}>Take the Quiz</button>
