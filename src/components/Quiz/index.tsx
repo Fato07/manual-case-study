@@ -40,13 +40,16 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
         <h2>{questions[currentStep].question}</h2>
         <div className={styles['quiz__options']}>
           {questions[currentStep].options.map((option, index) => (
-            <Button
+            <div
               key={index}
               onClick={() => handleAnswer(option.value)}
-              className={answers[currentStep] === option.value ? styles['quiz__option--selected'] : ''}
+              className={`${styles['quiz__option']} ${answers[currentStep] === option.value ? styles['quiz__option--selected'] : ''}`}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => e.key === 'Enter' && handleAnswer(option.value)}
             >
               <span dangerouslySetInnerHTML={{ __html: option.display }} />
-            </Button>
+            </div>
           ))}
         </div>
         <div className={styles['quiz__navigation']}>

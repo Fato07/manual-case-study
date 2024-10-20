@@ -43,6 +43,18 @@
   justify-content: center;
 }
 
+.quiz__option {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.quiz__option:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
 .quiz__option--selected {
   background-color: #0070f3;
   color: white;
