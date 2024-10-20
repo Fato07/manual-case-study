@@ -31,6 +31,7 @@ export default function Home() {
         imagePosition="right"
         backgroundSvg={BackgroundSVG02.src}
       />
+      {quizVisible && <Quiz />}
     </div>
   );
 }
