@@ -46,7 +46,6 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
               className={`${styles['quiz__option']} ${answers[currentStep] === option.value ? styles['quiz__option--selected'] : ''}`}
               role="button"
               tabIndex={0}
-              onKeyPress={(e) => e.key === 'Enter' && handleAnswer(option.value)}
             >
               <span dangerouslySetInnerHTML={{ __html: option.display }} />
             </div>
@@ -55,7 +54,7 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
         <div className={styles['quiz__navigation']}>
           {currentStep > 0 && <Button onClick={prevStep}>Back</Button>}
           {currentStep < questions.length - 1 && (
-            <Button onClick={nextStep} disabled={answers[currentStep] === undefined}>
+            <Button onClick={nextStep}>
               Next
             </Button>
           )}
@@ -71,7 +70,7 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
                     Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
                   </p>
                 )}
-                <Button onClick={() => window.location.reload()} disabled={answers[currentStep] === undefined}>
+                <Button onClick={() => window.location.reload()}>
                   Close
                 </Button>
               </div>
@@ -83,5 +82,4 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
     </div>
   );
 };
-
 export default Quiz;
