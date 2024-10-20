@@ -16,7 +16,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch questions from an external source or API
-    fetch('/path/to/questions.json')
+    fetch('/questions.json')
       .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error loading questions:', error));
