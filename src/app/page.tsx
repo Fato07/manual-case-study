@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LandingHero from "@/components/LandingHero";
 import Quiz from "@/components/Quiz";
 import styles from "./page.module.css";
@@ -12,7 +12,17 @@ import HeroSection from "@/components/HeroSection";
 export default function Home() {
   const [quizVisible, setQuizVisible] = useState(false);
 
-  return (
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    // Fetch questions from an external source or API
+    fetch('/path/to/questions.json')
+      .then(response => response.json())
+      .then(data => setQuestions(data))
+      .catch(error => console.error('Error loading questions:', error));
+  }, []);
+
+  return questions.length > 0 ? (
     <div>
       <LandingHero setQuizVisible={setQuizVisible} />
       <HeroSection
@@ -31,7 +41,7 @@ export default function Home() {
         imagePosition="right"
         backgroundSvg={BackgroundSVG02.src}
       />
-      {quizVisible && <Quiz />}
+      {quizVisible && <Quiz questions={questions} />}
     </div>
   );
 }

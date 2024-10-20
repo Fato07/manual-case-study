@@ -4,8 +4,12 @@ import { useQuizStore } from '../../state/quizStore';
 import Button from '../Button';
 import styles from './styles.module.css';
 
-const Quiz: FC = () => {
-  const { currentStep, questions, answers, setAnswer, nextStep, prevStep, rejectionOccurred } = useQuizStore();
+interface QuizProps {
+  questions: Array<{ question: string; options: Array<{ display: string; value: any; isRejection?: boolean }> }>;
+}
+
+const Quiz: FC<QuizProps> = ({ questions }) => {
+  const { currentStep, answers, setAnswer, nextStep, prevStep, rejectionOccurred } = useQuizStore();
 
   const answerSchema = z.array(z.object({
     question: z.string(),
