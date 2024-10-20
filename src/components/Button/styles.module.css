@@ -1,14 +1,16 @@
 .button {
-  width: 156px;
-  height: 45px;
-  padding: 15px 30px;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
   background-color: #8a2c2c;
   color: #ffffff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
 
 .button:hover {
   background-color: #6f2222;
+  transform: scale(1.05);
 }
