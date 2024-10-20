@@ -14,8 +14,6 @@ export default function Home() {
 
   return (
     <div>
-      <button onClick={() => setQuizVisible(true)}>Take the Quiz</button>
-      {quizVisible && <Quiz />}
       <LandingHero setQuizVisible={setQuizVisible} />
       <HeroSection
         imageSrc={HeroImage01.src}
