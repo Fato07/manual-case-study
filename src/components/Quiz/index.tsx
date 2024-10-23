@@ -3,6 +3,8 @@ import { z } from 'zod';
 import { useQuizStore } from '../../state/quizStore';
 import Button from '../Button';
 import styles from './styles.module.css';
+import Lottie from 'react-lottie';
+import animationData from '../../assets/lotties/Animation - 1729688853816.json';
 
 interface QuizProps {
   questions: Array<{ question: string; 
@@ -49,6 +51,15 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
     setAnswer(currentStep, value, isRejection);
   };
 
+  const lottieOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+
   return (
     <div className={styles['quiz__overlay']}>
       <div className={styles['quiz__question']}>
@@ -81,9 +92,12 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
                     Unfortunately, we are unable to prescribe this medication for you. This is because finasteride can alter the PSA levels, which may be used to monitor for cancer. You should discuss this further with your GP or specialist if you would still like this medication.
                   </p>
                 ) : (
-                  <p>
-                    Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
-                  </p>
+                  <div>
+                    <Lottie options={lottieOptions} height={200} width={200} />
+                    <p>
+                      Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
+                    </p>
+                </div>
                 )}
                 <Button onClick={() => window.location.reload()}>
                   Close
