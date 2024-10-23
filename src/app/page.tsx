@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import LandingHero from "@/components/LandingHero";
 import Quiz from "@/components/Quiz";
-import styles from "./page.module.css";
 import HeroImage01 from '../assets/image_1.png'
 import HeroImage02 from '../assets/image_2.png'
 import BackgroundSVG from '../assets/01.svg'
 import BackgroundSVG02 from '../assets/02.svg'
 import HeroSection from "@/components/HeroSection";
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 export default function Home() {
   const [quizVisible, setQuizVisible] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
 
   return questions.length > 0 ? (
     <div>
+      <Header/>
       <LandingHero setQuizVisible={setQuizVisible} />
       <HeroSection
         imageSrc={HeroImage01.src}
@@ -42,6 +44,7 @@ export default function Home() {
         backgroundSvg={BackgroundSVG02.src}
       />
       {quizVisible && <Quiz questions={questions} />}
+      <Footer />
     </div>
   ) : null;
 }

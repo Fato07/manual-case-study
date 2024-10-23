@@ -11,6 +11,17 @@ interface HeroSectionProps {
   backgroundSvg: string;
 }
 
+/**
+ * Renders a hero section component with an image, title, description, and subheading.
+ *
+ * @param imageSrc - The URL of the image to display.
+ * @param title - The main title of the hero section.
+ * @param description - The description text to display.
+ * @param subheading - The subheading text to display.
+ * @param imagePosition - The position of the image, either 'left' or 'right'.
+ * @param backgroundSvg - The URL of the background SVG image.
+ * @returns A React component that renders the hero section.
+ */
 const HeroSection: React.FC<HeroSectionProps> = ({
   imageSrc,
   title,

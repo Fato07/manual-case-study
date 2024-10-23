@@ -9,6 +9,15 @@ interface QuizProps {
   options: Array<{ display: string; value: any; isRejection?: boolean }> }>;
 }
 
+/**
+ * Renders a quiz component with a series of questions and options.
+ * 
+ * The quiz component is responsible for managing the state of the current question, the user's answers, and the navigation between questions.
+ * It also displays a modal with a success or rejection message at the end of the quiz.
+ * 
+ * @param questions - An array of quiz questions, where each question has a question string and an array of options.
+ * @returns A React functional component that renders the quiz.
+ */
 const Quiz: FC<QuizProps> = ({ questions }) => {
   const { currentStep, answers, setAnswer, nextStep, prevStep, rejectionOccurred } = useQuizStore();
 
@@ -29,6 +38,12 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
     }
   }, [questions]);
 
+  /**
+   * Handles the user's answer selection for the current quiz question.
+   * 
+   * @param value - The value of the selected option.
+   * @returns void
+   */
   const handleAnswer = (value: any) => {
     const isRejection = questions[currentStep].options.find(option => option.value === value)?.isRejection || false;
     setAnswer(currentStep, value, isRejection);

@@ -1,6 +1,13 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* --foreground: #171717; */
+}
+
+@font-face {
+  font-family: 'TT Norms';
+  src: url('../assets/TT\ Norms\ Pro\ Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -12,16 +19,16 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  /* max-width: 100vw; */
+  /* overflow-x: hidden; */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
   font-family: TT Norms;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 * {
@@ -35,8 +42,8 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */

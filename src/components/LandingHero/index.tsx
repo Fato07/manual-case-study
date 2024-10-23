@@ -4,6 +4,11 @@ import styles from './styles.module.css';
 import backgroundImage from './background_hero_image.jpg';
 import classNames from 'classnames';
 
+/**
+ * Defines the props for the `LandingHero` component.
+ * 
+ * @param setQuizVisible - A function that sets the visibility of the quiz.
+ */
 interface LandingHeroProps {
   setQuizVisible: (visible: boolean) => void;
 }
