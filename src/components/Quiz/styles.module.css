@@ -96,6 +96,10 @@
   transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
+.modal-closeButton{
+  margin-top: 5%;
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;

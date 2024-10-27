@@ -4,7 +4,8 @@ import { useQuizStore } from '../../state/quizStore';
 import Button from '../Button';
 import styles from './styles.module.css';
 import Lottie from 'react-lottie';
-import animationData from '../../assets/lotties/Animation - 1729688853816.json';
+import animationData from '../../assets/lotties/Animation - 1730059301404.json';
+import animation_fail from '../../assets/lotties/Animation - 1730059730462.json'
 
 interface QuizProps {
   questions: Array<{ question: string; 
@@ -52,9 +53,9 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
   };
 
   const lottieOptions = {
-    loop: false,
+    loop: true,
     autoplay: true,
-    animationData: animationData,
+    animationData: rejectionOccurred ? animation_fail : animationData,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
@@ -87,19 +88,27 @@ const Quiz: FC<QuizProps> = ({ questions }) => {
           {currentStep === questions.length - 1 && (
             <div>
               <div className={styles.modal}>
+                <div>
                 {rejectionOccurred ? (
-                  <p>
-                    Unfortunately, we are unable to prescribe this medication for you. This is because finasteride can alter the PSA levels, which may be used to monitor for cancer. You should discuss this further with your GP or specialist if you would still like this medication.
-                  </p>
+
+                  <div>
+                    <Lottie options={lottieOptions} />
+                      <p>
+                        Unfortunately, we are unable to prescribe this medication for you. This is because finasteride can alter the PSA levels, which may be used to monitor for cancer. You should discuss this further with your GP or specialist if you would still like this medication.
+                      </p>
+                  </div>
+
                 ) : (
                   <div>
-                    <Lottie options={lottieOptions} height={200} width={200} />
+                    <Lottie options={lottieOptions} />
                     <p>
                       Great news! We have the perfect treatment for your hair loss. Proceed to <a href="https://www.manual.co">www.manual.co</a>, and prepare to say hello to your new hair!
                     </p>
                 </div>
                 )}
-                <Button onClick={() => window.location.reload()}>
+                </div>
+          
+                <Button className={styles['modal-closeButton']} onClick={() => window.location.reload()}>
                   Close
                 </Button>
               </div>
